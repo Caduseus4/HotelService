@@ -9,11 +9,14 @@ public:
 	int islemiYapanId;
 	char* kontrolTarihi;
 	
+	//Hizmet classinin parametreli constructori
 	Hizmet(int islemiYapanId,char* kontrolTarihi) {
 		this->islemiYapanId = islemiYapanId;
 		this->kontrolTarihi = kontrolTarihi;
 	}
 
+
+	//Hizmet classinin parametresiz constructori
 	Hizmet(){}
 
 };

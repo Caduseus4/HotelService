@@ -19,12 +19,16 @@ public:
 	List list;
 	List list1;
 
+	// OdaServisi classinin constructori parametreli
 	OdaServisi(string odaNo, int islemiYapanId, char* kontrolTarihi) : Hizmet(islemiYapanId, kontrolTarihi) {
 		this->odaNo = odaNo;
 	}
-	
+
+	// OdaServisi classinin constructori parametresiz
 	OdaServisi(){}
 
+	
+	// Dosya olusturma fonksiyonu
 	void dosyaOlustur(string fileName){
 		
 		string fileLocation = "C:\\C++\\DonemProje\\HotelService\\Data\\" + fileName + ".txt";
@@ -34,10 +38,13 @@ public:
 	}
 
 	
-
+	// Acik bufeye gida ekleme fonksiyonu
 	void acikBufeGidaEkle() {
 		cout << "\nIslemi Gerceklestiren Kisinin ID'si: ";
 		cin >> islemiYapanId;
+
+
+
 		while (gida != "0") {
 			cout << "Gidayi Giriniz(Ekleme isleminden cikmak icin 0'a basin):";
 			cin >> gida;
@@ -57,6 +64,7 @@ public:
 		cout << endl;
 	}
 
+	// acikBufeGidaEkle fonksiyonunun kullanabilmesi icin texte gidalari yazdiran fonksiyon
 	void acikBufeGidaEkleText(string fileName) {
 
 		string fileLocation = "C:\\C++\\DonemProje\\HotelService\\Data\\" + fileName + ".txt";
@@ -74,6 +82,7 @@ public:
 				
 	}
 	
+	// Acik bufeye eklenen gidalari yazdirir
 	void acikBufeGidaYazdir() {
 		cout << "Acik bufedeki gidalar:\n";
 
@@ -85,6 +94,7 @@ public:
 
 	}
 
+	// Mini bara gida ekleme fonksiyonu
 	void miniBarGidaEkle() {
 		cout << "\nIslemi Gerceklestiren Kisinin ID'si: ";
 		cin >> islemiYapanId;
@@ -107,7 +117,7 @@ public:
 		cout << endl;
 	}
 
-	
+	// miniBarGidaEkle fonksiyonunun kullanabilmesi icin texte gidalari yazdiran fonksiyon
 	void miniBarGidaEkleText(string fileName) {
 
 		string fileLocation = "C:\\C++\\DonemProje\\HotelService\\Data\\" + fileName + ".txt";
@@ -123,7 +133,7 @@ public:
 		
 	}
 
-
+	// Mini bara eklenen gidalari yazdirir
 	void miniBarGidaYazdir() {
 		cout << "Mini bardaki gidalar:\n";
 		Node* tmp = list1.begin();
@@ -134,7 +144,7 @@ public:
 	}
 	
 	
-
+	// Musteri ozel talep belirtirse onaylama fonksiyonu
 	bool ozelTalepCevap(double fiyat, string fileName) {
 		
 		string fileLocation = "C:\\C++\\DonemProje\\HotelService\\Data\\" + fileName + ".txt";

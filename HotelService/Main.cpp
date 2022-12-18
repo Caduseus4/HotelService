@@ -5,10 +5,11 @@ using namespace std;
 
 
 int main() {
-	Oda yoda = Oda();
+	
 	OdaServisi oda = OdaServisi();
 	List list;
 	bool talepOnayi;
+
 	//oda.dosyaOlustur("TalepList");
 	//oda.dosyaOlustur("AcikBufeGidaList");
 	//oda.dosyaOlustur("MiniBarGidaList");
@@ -33,15 +34,15 @@ int main() {
 	//oda.acikBufeGidaYazdir("GidaList");
 
 
-	talepOnayi= oda.ozelTalepCevap(500,"TalepList");
-		
-	if (talepOnayi == true)
-	{
-		cout << "Talebiniz en kisa surede yerine getirilecektir. "<<endl;
-	}
-	else {
-		cout << "Talebinizi onaylamadiniz."<<endl;
-	}
+	//talepOnayi= oda.ozelTalepCevap(500,"TalepList");
+	//	
+	//if (talepOnayi == true)
+	//{
+	//	cout << "Talebiniz en kisa surede yerine getirilecektir. "<<endl;
+	//}
+	//else {
+	//	cout << "Talebinizi onaylamadiniz."<<endl;
+	//}
 	
 
 

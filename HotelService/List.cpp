@@ -15,7 +15,7 @@ public:
 	Node* end() const { return NULL; }
 	bool isEmpty() const { return begin() == end(); }
 
-	//listeye ürün eklemek için kullanýlan fonksiyon çift parametreli
+	//listeye ürün eklemek için kullanýlan fonksiyon 4 parametreli
 	void pushBack(const string& value, const double& value2, char* kontrolTarihi, int islemiYapanId) {
 
 		if (isEmpty()) // liste boþ mu diye kontrol eden blok
@@ -33,7 +33,7 @@ public:
 
 	}
 
-	//listeye ürün eklemek için kullanýlan fonksiyon tek parametreli
+	//listeye ürün eklemek için kullanýlan fonksiyon 3 parametreli
 	void pushBack(const string& value, char* kontrolTarihi,int islemiYapanId) {
 
 		if (isEmpty())// liste boþ mu diye kontrol eden blok
@@ -51,6 +51,7 @@ public:
 	}
 
 
+	//destructor
 	~List(){}
 
 };
