@@ -4,45 +4,37 @@
 using namespace std;
 
 
+//Mini bara fiyat eklendiðinde texte yazmýyor
+
+
 int main() {
 	
 	OdaServisi oda = OdaServisi();
 	List list;
 	bool talepOnayi;
 
-	//oda.dosyaOlustur("TalepList");
 	//oda.dosyaOlustur("AcikBufeGidaList");
 	//oda.dosyaOlustur("MiniBarGidaList");
+	//oda.dosyaOlustur("TalepList");
 
-	//oda.dosyayaYaz("AcikBufeGidaList");
-	//oda.acikBufeGidaEkle("AcikBufeGidaList");
 
-	//oda.acikBufeGidaEkle();
-	//oda.acikBufeGidaYazdir();
-
-	//oda.miniBarGidaEkle();
-	//oda.miniBarGidaYazdir();
-
-	/*cout << "---------------\n";
-	oda.miniBarGidaEkle();
-	cout << "---------------";
-	cout << "---------------"<<endl;
-	
+	oda.acikBufeGidaEkle();
 	oda.acikBufeGidaYazdir();
-	cout << "---------------"<<endl;
-	oda.miniBarGidaYazdir();*/
-	//oda.acikBufeGidaYazdir("GidaList");
 
+	oda.miniBarGidaEkle();
+	oda.miniBarGidaYazdir();
 
-	//talepOnayi= oda.ozelTalepCevap(500,"TalepList");
-	//	
-	//if (talepOnayi == true)
-	//{
-	//	cout << "Talebiniz en kisa surede yerine getirilecektir. "<<endl;
-	//}
-	//else {
-	//	cout << "Talebinizi onaylamadiniz."<<endl;
-	//}
+	
+
+	talepOnayi= oda.ozelTalepCevap(500,"TalepList");
+		
+	if (talepOnayi == true)
+	{
+		cout << "Talebiniz en kisa surede yerine getirilecektir. "<<endl;
+	}
+	else {
+		cout << "Talebinizi onaylamadiniz."<<endl;
+	}
 	
 
 

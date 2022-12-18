@@ -109,7 +109,7 @@ public:
 
 				cout << "Eklediginiz gidanin fiyatini giriniz:";
 				cin >> fiyat;
-				list1.pushBack(gida1, fiyat, kontrolTarihi, islemiYapanId);
+				list1.pushBack(gida1, kontrolTarihi , islemiYapanId,fiyat);
 
 			}
 		}

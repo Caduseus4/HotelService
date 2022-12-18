@@ -16,7 +16,7 @@ public:
 	bool isEmpty() const { return begin() == end(); }
 
 	//listeye ürün eklemek için kullanýlan fonksiyon 4 parametreli
-	void pushBack(const string& value, const double& value2, char* kontrolTarihi, int islemiYapanId) {
+	void pushBack(const string& value, char* kontrolTarihi, int islemiYapanId, const double& value2) {
 
 		if (isEmpty()) // liste boþ mu diye kontrol eden blok
 		{
@@ -28,7 +28,7 @@ public:
 			while (tmp->next != end()) {
 				tmp = tmp->next;
 			}
-			tmp->next = new Node(value, kontrolTarihi,value2);
+			tmp->next = new Node(value, kontrolTarihi,islemiYapanId,value2);
 		}
 
 	}
