@@ -33,7 +33,7 @@ int main() {
 	//oda.acikBufeGidaYazdir("GidaList");
 
 
-	talepOnayi= oda.ozelTalepCevap(500,"TalepList","22");
+	talepOnayi= oda.ozelTalepCevap(500,"TalepList");
 		
 	if (talepOnayi == true)
 	{

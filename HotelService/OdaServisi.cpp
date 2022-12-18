@@ -135,7 +135,7 @@ public:
 	
 	
 
-	bool ozelTalepCevap(double fiyat, string fileName,string odaNo) {
+	bool ozelTalepCevap(double fiyat, string fileName) {
 		
 		string fileLocation = "C:\\C++\\DonemProje\\HotelService\\Data\\" + fileName + ".txt";
 		ofstream file(fileLocation, ios::app);
@@ -153,7 +153,7 @@ public:
 
 			cout << "Islemi Gerceklestiren Kisinin ID'si: ";
 			cin >> islemiYapanId;
-			file << "Oda No:" << odaNo;
+			
 			file << "Islemi Gerceklestiren Kisinin ID'si: " << islemiYapanId << endl;
 			file << "Islem Onaylandi" << " | Islem Tarihi: " << kontrolTarihi << endl;
 			
@@ -168,6 +168,7 @@ public:
 			
 			file << "Islemi Gerceklestiren Kisinin ID'si: " << islemiYapanId << endl;
 			file << "Islem Onaylanmadi" << " | Islem Tarihi: " << kontrolTarihi << endl;
+			
 			return false;
 		}
 	}
