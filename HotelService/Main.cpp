@@ -4,8 +4,6 @@
 using namespace std;
 
 
-//Mini bara fiyat eklendiðinde texte yazmýyor
-
 
 int main() {
 	
