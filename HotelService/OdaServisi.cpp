@@ -1,3 +1,4 @@
+#pragma warning(disable : 4996)
 #include <iostream>
 #ifndef ODASERVISI_CPP
 #define ODASERVISI_CPP
@@ -5,10 +6,11 @@
 #include "List.cpp"
 #include "Hizmet.cpp"
 #include <fstream>
+#include <ctime>
 using namespace std;
 
 class OdaServisi : public Hizmet{
-	string kontrolEden, kontrolSaati,odaNo;
+	string islemiYapan,odaNo;
 protected:
 	double fiyat;
 public:
@@ -16,7 +18,7 @@ public:
 	List list;
 	List list1;
 
-	OdaServisi(string odaNo, string kontrolEden, string kontrolSaati) : Hizmet(kontrolEden, kontrolSaati) {
+	OdaServisi(string odaNo, string islemiYapan, char* kontrolTarihi) : Hizmet(islemiYapan, kontrolTarihi) {
 		this->odaNo = odaNo;
 	}
 	
@@ -39,7 +41,9 @@ public:
 			cin >> gida;
 			if (gida != "0")
 			{
-				list.pushBack(gida);
+				time_t now = time(0);
+				char* kontrolTarihi = ctime(&now);
+				list.pushBack(gida,kontrolTarihi);
 				
 			}
 
@@ -55,8 +59,10 @@ public:
 
 				Node* tmp = list.begin();
 				while (tmp != list.end()) {
-					file << tmp->data << endl;
+
+					file << tmp->data <<" | Islem Tarihi: " << tmp->kontrolTarihi << endl;
 					tmp = tmp->next;
+					
 				}
 				file.close();
 				
@@ -80,7 +86,7 @@ public:
 
 		Node* tmp = list1.begin();
 		while (tmp != list1.end()) {
-			file << tmp->data << " Fiyati:" << tmp->fiyat << endl;
+			file << tmp->data << " Fiyati:" << tmp->fiyat <<" | Islem Tarihi: " << tmp->kontrolTarihi << endl;
 			tmp = tmp->next;
 		}
 	}
@@ -90,11 +96,14 @@ public:
 		while (gida1 != "0") {
 			cout << "Gidayi giriniz(Ekleme isleminden cikmak icin 0'e basin):";
 			cin >> gida1;
+			time_t now = time(0);
+			char* kontrolTarihi = ctime(&now);
 			if (gida1 != "0")
 			{
+				
 				cout << "Eklediginiz gidanin fiyatini giriniz:";
 				cin >> fiyat;
-				list1.pushBack(gida1, fiyat);
+				list1.pushBack(gida1,fiyat,kontrolTarihi);
 
 			}
 		}
@@ -113,7 +122,11 @@ public:
 	
 	
 
-	bool ozelTalepCevap(double fiyat) {
+	bool ozelTalepCevap(double fiyat, string fileName) {
+		
+		string fileLocation = "C:\\C++\\DonemProje\\HotelService\\Data\\" + fileName + ".txt";
+		ofstream file(fileLocation, ios::app);
+
 		int onay;
 		this->fiyat = fiyat;
 		cout << "Talebinizin bedeli: " << fiyat << "'TL dir." << endl;
@@ -122,9 +135,15 @@ public:
 		
 		if (onay==1)
 		{
+			time_t now = time(0);
+			char* kontrolTarihi = ctime(&now);
+			file << "Islem Onaylandi" << " | Islem Tarihi: " << kontrolTarihi;
 			return true;
 		}
 		else {
+			time_t now = time(0);
+			char* kontrolTarihi = ctime(&now);
+			file << "Islem Onaylanmadi" << " | Islem Tarihi: " << kontrolTarihi;
 			return false;
 		}
 	}

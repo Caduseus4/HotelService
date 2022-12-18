@@ -1,9 +1,9 @@
+#pragma warning(disable : 4996)
 #include <iostream>
 #ifndef LIST_CPP
 #define LIST_CPP
-
-
 #include "Node.cpp"
+#include <ctime>
 using namespace std;
 
 class List {
@@ -16,11 +16,11 @@ public:
 	bool isEmpty() const { return begin() == end(); }
 
 	//listeye ürün eklemek için kullanýlan fonksiyon çift parametreli
-	void pushBack(const string& value, const double& value2) {
+	void pushBack(const string& value, const double& value2, char* kontrolTarihi) {
 
 		if (isEmpty()) // liste boþ mu diye kontrol eden blok
 		{
-			root = new Node(value,value2);
+			root = new Node(value, kontrolTarihi,value2);
 		}
 		else 
 		{
@@ -28,39 +28,28 @@ public:
 			while (tmp->next != end()) {
 				tmp = tmp->next;
 			}
-			tmp->next = new Node(value,value2);
+			tmp->next = new Node(value, kontrolTarihi,value2);
 		}
 
 	}
 
 	//listeye ürün eklemek için kullanýlan fonksiyon tek parametreli
-	void pushBack(const string& value) {
+	void pushBack(const string& value, char* kontrolTarihi) {
 
 		if (isEmpty())// liste boþ mu diye kontrol eden blok
 		{
-			root = new Node(value); 
+			root = new Node(value,kontrolTarihi); 
 		}
 		else {
 			Node* tmp = begin();
 			while (tmp->next != end()) {
 				tmp = tmp->next;
 			}
-			tmp->next = new Node(value);
+			tmp->next = new Node(value,kontrolTarihi);
 		}
 
 	}
 
-	
-	// listeyi yazdiran fonksiyon
-	void printlist() {
-
-		Node* tmp = begin();
-		while (tmp != end()) {
-			cout << tmp->data << " Fiyati:" << tmp->fiyat << endl;
-			tmp = tmp->next;
-		}
-
-	}
 
 	~List(){}
 

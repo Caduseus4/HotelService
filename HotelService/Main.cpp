@@ -3,12 +3,13 @@
 
 using namespace std;
 
+
 int main() {
 
 	OdaServisi oda = OdaServisi();
 	List list;
 	bool talepOnayi;
-
+	//oda.dosyaOlustur("TalepList");
 	//oda.dosyaOlustur("AcikBufeGidaList");
 	//oda.dosyaOlustur("MiniBarGidaList");
 
@@ -32,7 +33,7 @@ int main() {
 	//oda.acikBufeGidaYazdir("GidaList");
 
 
-	/*talepOnayi= oda.ozelTalepCevap(500);
+	talepOnayi= oda.ozelTalepCevap(500,"TalepList");
 		
 	if (talepOnayi == true)
 	{
@@ -41,7 +42,7 @@ int main() {
 	else {
 		cout << "Talebinizi onaylamadiniz."<<endl;
 	}
-	*/
+	
 
 
 }

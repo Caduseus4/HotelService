@@ -1,6 +1,8 @@
+#pragma warning(disable : 4996)
 #include <iostream>
 #ifndef NODE_CPP
 #define NODE_CPP
+#include <ctime>
 
 using namespace std;
 
@@ -9,8 +11,10 @@ public:
 	string data;
 	double fiyat;
 	Node* next;
+	char* kontrolTarihi;
+	
 
-	Node(const string& data = "", const double& fiyat = 0, Node* next = NULL) : data(data), next(next), fiyat(fiyat) {	}
+	Node(const string& data = "", char* kontrolTarihi = 0, const double& fiyat = 0, Node* next = NULL ) :kontrolTarihi(kontrolTarihi), data(data), next(next), fiyat(fiyat) {	}
 
 	//~Node() {}
 

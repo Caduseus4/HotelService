@@ -6,11 +6,12 @@ using namespace std;
 class Hizmet
 {
 public:
-	string kontrolEden, kontrolSaati;
+	string islemiYapan;
+	char* kontrolTarihi;
 	
-	Hizmet(string kontrolEden,string kontrolSaati) {
-		this->kontrolEden = kontrolEden;
-		this->kontrolSaati = kontrolSaati;
+	Hizmet(string islemiYapan,char* kontrolTarihi) {
+		this->islemiYapan = islemiYapan;
+		this->kontrolTarihi = kontrolTarihi;
 	}
 
 	Hizmet(){}
