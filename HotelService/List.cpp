@@ -16,11 +16,11 @@ public:
 	bool isEmpty() const { return begin() == end(); }
 
 	//listeye ürün eklemek için kullanýlan fonksiyon çift parametreli
-	void pushBack(const string& value, const double& value2, char* kontrolTarihi) {
+	void pushBack(const string& value, const double& value2, char* kontrolTarihi, int islemiYapanId) {
 
 		if (isEmpty()) // liste boþ mu diye kontrol eden blok
 		{
-			root = new Node(value, kontrolTarihi,value2);
+			root = new Node(value, kontrolTarihi, islemiYapanId, value2);
 		}
 		else 
 		{
@@ -34,18 +34,18 @@ public:
 	}
 
 	//listeye ürün eklemek için kullanýlan fonksiyon tek parametreli
-	void pushBack(const string& value, char* kontrolTarihi) {
+	void pushBack(const string& value, char* kontrolTarihi,int islemiYapanId) {
 
 		if (isEmpty())// liste boþ mu diye kontrol eden blok
 		{
-			root = new Node(value,kontrolTarihi); 
+			root = new Node(value,kontrolTarihi, islemiYapanId);
 		}
 		else {
 			Node* tmp = begin();
 			while (tmp->next != end()) {
 				tmp = tmp->next;
 			}
-			tmp->next = new Node(value,kontrolTarihi);
+			tmp->next = new Node(value,kontrolTarihi, islemiYapanId);
 		}
 
 	}

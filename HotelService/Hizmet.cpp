@@ -6,11 +6,11 @@ using namespace std;
 class Hizmet
 {
 public:
-	string islemiYapan;
+	int islemiYapanId;
 	char* kontrolTarihi;
 	
-	Hizmet(string islemiYapan,char* kontrolTarihi) {
-		this->islemiYapan = islemiYapan;
+	Hizmet(int islemiYapanId,char* kontrolTarihi) {
+		this->islemiYapanId = islemiYapanId;
 		this->kontrolTarihi = kontrolTarihi;
 	}
 

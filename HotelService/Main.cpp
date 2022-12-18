@@ -5,7 +5,7 @@ using namespace std;
 
 
 int main() {
-
+	Oda yoda = Oda();
 	OdaServisi oda = OdaServisi();
 	List list;
 	bool talepOnayi;
@@ -16,11 +16,11 @@ int main() {
 	//oda.dosyayaYaz("AcikBufeGidaList");
 	//oda.acikBufeGidaEkle("AcikBufeGidaList");
 
-	oda.acikBufeGidaEkle();
-	oda.acikBufeGidaYazdir();
+	//oda.acikBufeGidaEkle();
+	//oda.acikBufeGidaYazdir();
 
-	oda.miniBarGidaEkle();
-	oda.miniBarGidaYazdir();
+	//oda.miniBarGidaEkle();
+	//oda.miniBarGidaYazdir();
 
 	/*cout << "---------------\n";
 	oda.miniBarGidaEkle();
@@ -33,7 +33,7 @@ int main() {
 	//oda.acikBufeGidaYazdir("GidaList");
 
 
-	talepOnayi= oda.ozelTalepCevap(500,"TalepList");
+	talepOnayi= oda.ozelTalepCevap(500,"TalepList","22");
 		
 	if (talepOnayi == true)
 	{
