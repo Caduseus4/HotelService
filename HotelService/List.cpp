@@ -16,11 +16,11 @@ public:
 	bool isEmpty() const { return begin() == end(); }
 
 	//listeye ürün eklemek için kullanýlan fonksiyon 4 parametreli
-	void pushBack(const string& value, char* kontrolTarihi, int islemiYapanId, const double& value2) {
+	void pushBack(const string& deger, char* kontrolTarihi, int islemiYapanId, const double& deger2) {
 
-		if (isEmpty()) // liste boþ mu diye kontrol eden blok
+		if (isEmpty()) // liste bos mu diye kontrol eden blok
 		{
-			root = new Node(value, kontrolTarihi, islemiYapanId, value2);
+			root = new Node(deger, kontrolTarihi, islemiYapanId, deger2);
 		}
 		else 
 		{
@@ -28,24 +28,24 @@ public:
 			while (tmp->next != end()) {
 				tmp = tmp->next;
 			}
-			tmp->next = new Node(value, kontrolTarihi,islemiYapanId,value2);
+			tmp->next = new Node(deger, kontrolTarihi,islemiYapanId,deger2);
 		}
 
 	}
 
-	//listeye ürün eklemek için kullanýlan fonksiyon 3 parametreli
-	void pushBack(const string& value, char* kontrolTarihi,int islemiYapanId) {
+	//listeye ürün eklemek için kullanilan fonksiyon 3 parametreli
+	void pushBack(const string& deger, char* kontrolTarihi,int islemiYapanId) {
 
 		if (isEmpty())// liste boþ mu diye kontrol eden blok
 		{
-			root = new Node(value,kontrolTarihi, islemiYapanId);
+			root = new Node(deger,kontrolTarihi, islemiYapanId);
 		}
 		else {
 			Node* tmp = begin();
 			while (tmp->next != end()) {
 				tmp = tmp->next;
 			}
-			tmp->next = new Node(value,kontrolTarihi, islemiYapanId);
+			tmp->next = new Node(deger,kontrolTarihi, islemiYapanId);
 		}
 
 	}

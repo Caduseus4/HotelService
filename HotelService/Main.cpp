@@ -1,5 +1,7 @@
 #include <iostream>
 #include "OdaServisi.cpp"
+#include "Temizlik.cpp"
+#include "Oda.cpp"
 
 using namespace std;
 
@@ -7,24 +9,28 @@ using namespace std;
 
 int main() {
 	
-	OdaServisi oda = OdaServisi();
+	OdaServisi odaService = OdaServisi();
+	Temizlik temizlik;
 	List list;
 	bool talepOnayi;
 
+	Oda* oda;
+	oda->odaNo = 10;
 	//oda.dosyaOlustur("AcikBufeGidaList");
 	//oda.dosyaOlustur("MiniBarGidaList");
 	//oda.dosyaOlustur("TalepList");
+	
+	
 
+	/*odaService.acikBufeGidaEkle();
+	odaService.acikBufeGidaYazdir();
 
-	oda.acikBufeGidaEkle();
-	oda.acikBufeGidaYazdir();
-
-	oda.miniBarGidaEkle();
-	oda.miniBarGidaYazdir();
+	odaService.miniBarGidaEkle();
+	odaService.miniBarGidaYazdir();
 
 	
 
-	talepOnayi= oda.ozelTalepCevap(500,"TalepList");
+	talepOnayi= odaService.ozelTalepCevap(500,"TalepList");
 		
 	if (talepOnayi == true)
 	{
@@ -33,7 +39,7 @@ int main() {
 	else {
 		cout << "Talebinizi onaylamadiniz."<<endl;
 	}
-	
+	*/
 
 
 }
