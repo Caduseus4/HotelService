@@ -12,7 +12,9 @@ public:
 	string odaTuru;
 	int odaKisiKapasitesi;
 	int gunlukOdaFiyati;
-	bool temizMi;
+	bool temizlik;
+	bool araTemizlik;
+	bool ozelTemizlik;
 	bool ekstraTemizlik;
 	bool doluMu;
 };

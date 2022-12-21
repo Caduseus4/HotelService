@@ -21,7 +21,7 @@ public:
 
 	//Müsteri cikis yaptiktan sonra oda temizligi kontrolunu yapan fonksiyon
 	bool CikisTemizlikKontrol(Oda* oda, string fileName) {
-		if (oda->temizMi)
+		if (oda->temizlik)
 		{
 			cout << "Cikis temizlik kontrol islemi basarili: Oda Temiz!";
 			cout << "\nIslemi Gerceklestiren Kisinin ID'si: ";
@@ -46,7 +46,7 @@ public:
 
 	//Ara temizlik islemi yapan 
 	bool araTemizlik(Oda* oda,string fileName) {
-		if (oda->temizMi == true)
+		if (oda->temizlik == true)
 		{
 			cout << "Giris temizlik kontrol islemi basarili: Oda Temiz!";
 			cout << "\nIslemi Gerceklestiren Kisinin ID'si: ";

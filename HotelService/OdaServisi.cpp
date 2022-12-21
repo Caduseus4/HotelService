@@ -9,9 +9,10 @@
 #include <ctime>
 using namespace std;
 
-class OdaServisi : public Hizmet{
+class OdaServisi{
 	string odaNo;
 	int islemiYapanId;
+	char* kontrolTarihi;
 protected:
 	double fiyat;
 public:
@@ -20,8 +21,11 @@ public:
 	List list1;
 
 	// OdaServisi classinin constructori parametreli
-	OdaServisi(string odaNo, int islemiYapanId, char* kontrolTarihi) : Hizmet(islemiYapanId, kontrolTarihi) {
+	OdaServisi(string odaNo, int islemiYapanId, char* kontrolTarihi){
 		this->odaNo = odaNo;
+		this->islemiYapanId;
+		this->kontrolTarihi;
+		
 	}
 
 	// OdaServisi classinin constructori parametresiz
